@@ -1,0 +1,2 @@
+
+server_name  {{ (ds "params" "vars.yaml" ) .foo   }} ;
