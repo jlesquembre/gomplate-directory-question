@@ -1,20 +1,11 @@
 I'm running it with:
 
 ```
-gomplate --verbose --input-dir in --output-dir out --datasource params  -- cat out/a.txt
+gomplate --verbose --input-dir in --output-dir out --datasource params=params/  -- cat out/a.txt
 ```
 
-The output is this:
+But I get this error:
 
 ```
-server_name  foo: "bar"
- ;
-```
-
-looks like is inserting the complete `vars.yaml` file
-
-I'd expect this output:
-
-```
-server_name  bar ;
+template: in/a.txt:2:29: executing "in/a.txt" at <"vars.yaml">: can't evaluate field foo in type string
 ```
